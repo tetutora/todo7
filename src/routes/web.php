@@ -18,4 +18,6 @@ Route::controller(TodoController::class)->group( function ()
 {
     Route::get('/','index');
     Route::post('/todos','store');
+    Route::patch('/todos/update','update');
+    Route::delete('/todos/delete','destroy');
 });

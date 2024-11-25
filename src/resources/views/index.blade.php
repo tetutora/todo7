@@ -41,9 +41,11 @@
             <tr class="todo-table__row">
                 <form action="/todos/update" class="update-form" method="post">
                 @csrf
+                @method('patch')
                     <div class="update-form__item">
                         <td class="update-form__input">
                             <input type="text" name="content" value="{{ $todo->content }}" class="update-form__input-text">
+                            <input type="hidden" name="id" value="{{ $todo->id }}">
                         </td>
                         <td class="update-form__button">
                             <button type="submit" class="update-form__button-submit">更新</button>
@@ -52,8 +54,10 @@
                 </form>
                 <form class="delete-form" action="/todos/delete" method="post">
                 @csrf
+                @method('delete')
                     <td class="delete-form__button">
                         <button type="submit" class="delete-form__button-submit">削除</button>
+                        <input type="hidden" name="id" value="{{ $todo->id }}">
                     </td>
                 </form>
             @endforeach
