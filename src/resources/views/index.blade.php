@@ -22,6 +22,7 @@
 
 <div class="todo__content">
     <form class="crete-form" action="/todos" method="post">
+        <h2>新規作成</h2>
         <div class="create-form__item">
             @csrf
             <div class="create-form__input">
@@ -36,6 +37,7 @@
         <table class="todo-table__inner">
             <tr class="todo-table__row">
                 <th class="todo-table__header">Todo</th>
+                <th class="todo-table__category">カテゴリ</th>
             </tr>
             @foreach($todos as $todo)
             <tr class="todo-table__row">
@@ -46,6 +48,10 @@
                         <td class="update-form__input">
                             <input type="text" name="content" value="{{ $todo->content }}" class="update-form__input-text">
                             <input type="hidden" name="id" value="{{ $todo->id }}">
+                        </td>
+                        <td class="category__item">
+                            <input type="text" name="category__id" value="" class="category__item-list">
+                            <input type="hidden" name="category__id" value="">
                         </td>
                         <td class="update-form__button">
                             <button type="submit" class="update-form__button-submit">更新</button>

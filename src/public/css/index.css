@@ -20,13 +20,18 @@ ul {
     margin-left: 0;
 }
 
+h2{
+    margin-top: 50px;
+}
+
 .create-form__item{
     max-width: 1230px;
-    margin: 70px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
 .create-form__input{
+    margin: 0;
     width: 70%;
     height: 50px;
 }
@@ -67,24 +72,38 @@ ul {
 .todo-table__header{
     text-align: left;
 }
+.todo-table__category{
+    text-align: left;
+}
 
 .update-form__input{
-    width: 80%;
+    width: 30%;
 }
 
 .update-form__input-text{
     width: 100%;
     height: 40px;
     border: none;
-    border-radius: 5px;
+}
+
+.category__item {
+    width: 30%;
+}
+
+.category__item-list{
+    width: 100%;
+    height: 40px;
+    border: none;
+
 }
 
 .update-form__button{
     width: 10%;
+    text-align: left;
 }
 
 .update-form__button-submit{
-    width: 70%;
+    width: 50%;
     height: 40px;
     border: none;
     background-color: blue;
@@ -93,12 +112,12 @@ ul {
 }
 
 .delete-form__button{
-    width: 10%;
+    width: 5%;
     text-align: right;
 }
 
 .delete-form__button-submit{
-    width: 70%;
+    width: 100%;
     height: 40px;
     border: none;
     background-color: red;
