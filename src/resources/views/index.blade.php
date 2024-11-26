@@ -39,14 +39,15 @@
             </div>
         </div>
     </form>
-    <form class="search-form" action="/todos" method="post">
+    <form class="search-form" action="/todos/search" method="get">
+        @csrf
         <div class="search-form__title">
             <h2>Todo検索</h2>
         </div>
         <div class="search-form__item">
             @csrf
             <div class="search-form__input">
-                <input class="search-form__input-text" type="text" name="content" id="" >
+                <input class="search-form__input-text" type="search" name="content" id="" >
             </div>
             <select class="search-form__select" name="" id="">
                 <option value="">カテゴリ</option>

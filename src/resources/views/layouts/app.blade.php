@@ -15,7 +15,7 @@
             <nav class="navbar">
                 <ul class="navbar__list">
                     <li class="navbar__item">
-                        <a class="navbar__item-link" href="">カテゴリ一覧</a>
+                        <a class="navbar__item-link" href="/categories">カテゴリ一覧</a>
                     </li>
                 </ul>
             </nav>
