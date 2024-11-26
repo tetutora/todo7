@@ -49,11 +49,13 @@
         <div class="search-form__item">
             @csrf
             <div class="search-form__input">
-                <input class="search-form__input-text" type="search" name="content" id="" >
+                <input class="search-form__input-text" type="search" name="content" value="{{ request('content') }}" placeholder="Todoを検索">
             </div>
-            <select class="search-form__select" name="category_id" id="">
+            <select class="search-form__select" name="category_id" >
                 <option value="">カテゴリ</option>
-                <option value=""></option>
+                @foreach($categories as $category)
+                <option value="{{ $category->id }}"{{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
             </select>
             <div class="search-form__button">
                 <button type="submit" class="search-form__button-submit">検索</button>
