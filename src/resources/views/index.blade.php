@@ -22,17 +22,19 @@
 
 <div class="todo__content">
     <form class="crete-form" action="/todos" method="post">
+        @csrf
         <div class="create-form__title">
             <h2>新規作成</h2>
         </div>
         <div class="create-form__item">
-            @csrf
             <div class="create-form__input">
                 <input class="create-form__input-text" type="text" name="content" id="" placeholder="Todoを入力してください">
             </div>
-            <select class="create-form__select" name="" id="">
+            <select class="create-form__select" name="category_id" id="">
                 <option value="">カテゴリ</option>
-                <option value=""></option>
+                @foreach($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
             </select>
             <div class="create-form__button">
                 <button type="submit" class="create-form__button-submit">作成</button>
@@ -49,7 +51,7 @@
             <div class="search-form__input">
                 <input class="search-form__input-text" type="search" name="content" id="" >
             </div>
-            <select class="search-form__select" name="" id="">
+            <select class="search-form__select" name="category_id" id="">
                 <option value="">カテゴリ</option>
                 <option value=""></option>
             </select>
@@ -68,15 +70,20 @@
             <tr class="todo-table__row">
                 <form action="/todos/update" class="update-form" method="post">
                 @csrf
-                @method('patch')
+                @method('PATCH')
                     <div class="update-form__item">
                         <td class="update-form__input">
                             <input type="text" name="content" value="{{ $todo->content }}" class="update-form__input-text">
                             <input type="hidden" name="id" value="{{ $todo->id }}">
                         </td>
                         <td class="category__item">
-                            <input type="text" name="category__id" value="" class="category__item-list">
-                            <input type="hidden" name="category__id" value="">
+                            <select name="category_id" class="category__item-list">
+                                <option value="">カテゴリを選択</option>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}" {{ $todo->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}
+                                </option>
+                                @endforeach
+                            </select>
                         </td>
                         <td class="update-form__button">
                             <button type="submit" class="update-form__button-submit">更新</button>
