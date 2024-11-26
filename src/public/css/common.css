@@ -4,8 +4,9 @@
 
 .header__inner{
     max-width: 1230px;
-    margin: 0 auto;
-    padding: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -14,4 +15,11 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
+    padding: 20px;
+}
+
+.navbar__item-link{
+    color: white;
+    text-decoration: none;
+
 }

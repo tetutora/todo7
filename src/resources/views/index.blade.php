@@ -22,14 +22,38 @@
 
 <div class="todo__content">
     <form class="crete-form" action="/todos" method="post">
-        <h2>新規作成</h2>
+        <div class="create-form__title">
+            <h2>新規作成</h2>
+        </div>
         <div class="create-form__item">
             @csrf
             <div class="create-form__input">
                 <input class="create-form__input-text" type="text" name="content" id="" placeholder="Todoを入力してください">
             </div>
+            <select class="create-form__select" name="" id="">
+                <option value="">カテゴリ</option>
+                <option value=""></option>
+            </select>
             <div class="create-form__button">
                 <button type="submit" class="create-form__button-submit">作成</button>
+            </div>
+        </div>
+    </form>
+    <form class="search-form" action="/todos" method="post">
+        <div class="search-form__title">
+            <h2>Todo検索</h2>
+        </div>
+        <div class="search-form__item">
+            @csrf
+            <div class="search-form__input">
+                <input class="search-form__input-text" type="text" name="content" id="" >
+            </div>
+            <select class="search-form__select" name="" id="">
+                <option value="">カテゴリ</option>
+                <option value=""></option>
+            </select>
+            <div class="search-form__button">
+                <button type="submit" class="search-form__button-submit">検索</button>
             </div>
         </div>
     </form>

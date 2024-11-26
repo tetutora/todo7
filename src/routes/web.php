@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,13 @@ Route::controller(TodoController::class)->group( function ()
     Route::post('/todos','store');
     Route::patch('/todos/update','update');
     Route::delete('/todos/delete','destroy');
+    Route::get('/todos/search','search');
+});
+
+Route::controller(CategoryController::class)->group( function ()
+{
+    Route::get('/categories','index');
+    Route::post('/categories','store');
+    Route::patch('/categories/update','update');
+    Route::delete('/categories/delete','destroy');
 });
